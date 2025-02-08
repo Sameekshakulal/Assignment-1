@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int sales_data[] = {100, 150, 200, 180, 250, 220};
+    int size = sizeof(sales_data) / sizeof(sales_data[0]);
+
+    int highest_sales = -1; 
+    int highest_sales_day = -1;
+
+    for (int i = 0; i < size; i++) {
+        if (sales_data[i] > highest_sales) {
+            highest_sales = sales_data[i];
+            highest_sales_day = i;
+        }
+    }
+
+    if (highest_sales_day != -1) {
+        printf("The day with the highest sales is day %d with sales of %d\n", highest_sales_day + 1, highest_sales); 
+    } else {
+        printf("No sales data provided.\n");
+    }
+
+    return 0;
+}
